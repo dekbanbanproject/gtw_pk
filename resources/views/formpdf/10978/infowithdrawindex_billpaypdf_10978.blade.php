@@ -380,12 +380,11 @@
                 </td>
                 <td width="10%">
                 </td>
-                <td width="9%"></td>
-                <td width="31%" style="text-align: center">
-                    <label for="">(&nbsp; นางสาวรัชดาภรณ์  &nbsp;  ภิรมย์ไกรภักดิ์&nbsp;)</label>
-                </td>
-                <td width="10%">
-                </td>
+                <td width="7%"></td>
+            <td width="36%" style="text-align: center">
+                <label for="">(&nbsp; นางสาวรัชดาภรณ์ &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+            </td>
+            <td width="7%"></td>
             </tr>
         </table>
         <table width="100%" style="margin-top: 2px">
@@ -1491,12 +1490,11 @@
             </td>
             <td width="10%">
             </td>
-            <td width="9%"></td>
-            <td width="31%" style="text-align: center">
-                <label for="">(&nbsp; นางสาวรัชดาภรณ์  &nbsp;  ภิรมย์ไกรภักดิ์&nbsp;)</label>
+            <td width="7%"></td>
+            <td width="36%" style="text-align: center">
+                <label for="">(&nbsp; นางสาวรัชดาภรณ์ &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
             </td>
-            <td width="10%">
-            </td>
+            <td width="7%"></td>
         </tr>
     </table>
     <table width="100%" style="margin-top: 2px">
@@ -2585,12 +2583,11 @@
                 </td>
                 <td width="10%">
                 </td>
-                <td width="9%"></td>
-                <td width="31%" style="text-align: center">
-                    <label for="">(&nbsp; นางสาวรัชดาภรณ์  &nbsp;  ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                <td width="7%"></td>
+                <td width="36%" style="text-align: center">
+                    <label for="">(&nbsp; นางสาวรัชดาภรณ์ &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
                 </td>
-                <td width="10%">
-                </td>
+                <td width="7%"></td>
             </tr>
         </table>
         <table width="100%" style="margin-top: 2px">
@@ -3682,12 +3679,11 @@
             </td>
             <td width="10%">
             </td>
-            <td width="9%"></td>
-            <td width="31%" style="text-align: center">
-                <label for="">(&nbsp; นางสาวรัชดาภรณ์  &nbsp;  ภิรมย์ไกรภักดิ์&nbsp;)</label>
+            <td width="7%"></td>
+            <td width="36%" style="text-align: center">
+                <label for="">(&nbsp; นางสาวรัชดาภรณ์ &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
             </td>
-            <td width="10%">
-            </td>
+            <td width="7%"></td>
         </tr>
     </table>
     <table width="100%" style="margin-top: 2px">
