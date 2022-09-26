@@ -382,7 +382,7 @@
                 </td>
                 <td width="7%"></td>
             <td width="36%" style="text-align: center">
-                <label for="">(&nbsp; นางสาวรัชดาภรณ์ &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
             </td>
             <td width="7%"></td>
             </tr>
@@ -1492,7 +1492,7 @@
             </td>
             <td width="7%"></td>
             <td width="36%" style="text-align: center">
-                <label for="">(&nbsp; นางสาวรัชดาภรณ์ &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
             </td>
             <td width="7%"></td>
         </tr>
@@ -2585,7 +2585,7 @@
                 </td>
                 <td width="7%"></td>
                 <td width="36%" style="text-align: center">
-                    <label for="">(&nbsp; นางสาวรัชดาภรณ์ &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                    <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
                 </td>
                 <td width="7%"></td>
             </tr>
@@ -3681,7 +3681,7 @@
             </td>
             <td width="7%"></td>
             <td width="36%" style="text-align: center">
-                <label for="">(&nbsp; นางสาวรัชดาภรณ์ &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
             </td>
             <td width="7%"></td>
         </tr>
