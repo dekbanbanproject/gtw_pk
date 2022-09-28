@@ -423,7 +423,8 @@
                     <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
                     <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
-                    @else                    
+                    @else  
+                    @endif                  
                 </td>
                 <td width="10%">
                 </td>
@@ -1552,7 +1553,8 @@
                 <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
                 <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
-                @else                    
+                @else  
+                @endif                  
             </td>
                 <td width="10%">
                 </td>
@@ -2664,7 +2666,8 @@
                     <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
                     <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
-                    @else                    
+                    @else  
+                    @endif                  
                 </td>
                 <td width="10%">
                 </td>
@@ -3779,7 +3782,8 @@
                 <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
                 <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
-                @else                    
+                @else  
+                @endif                  
             </td>
                 <td width="10%">
                 </td>
