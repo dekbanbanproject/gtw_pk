@@ -375,9 +375,10 @@
         $invencount = DB::table('supplies_inven_permiss')
         ->leftjoin('hrd_person','hrd_person.ID','=','supplies_inven_permiss.INVENPERMIS_PERSON_ID')
         ->leftjoin('warehouse_store_export_sub','warehouse_store_export_sub.EXPORT_SUB_USER_ID','=','hrd_person.ID')
+        ->leftjoin('hrd_prefix','hrd_prefix.HR_PREFIX_ID','=','hrd_person.HR_PREFIX_ID')
         ->where('INVENPERMIS_INVEN_ID','=', $inforwarehouserequests->WAREHOUSE_INVEN_ID)->first();
         // warehouse_store_export_sub
-        $pername = $invencount->HR_FNAME.'  '.$invencount->HR_LNAME;
+        $pername = $invencount->HR_PREFIX_NAME.' '.$invencount->HR_FNAME.'  '.$invencount->HR_LNAME;
         $perposition = $invencount->POSITION_IN_WORK;
       ?>
         <table width="100%" style="margin-top: 5px">
@@ -388,10 +389,20 @@
                 </td>
                 <td width="10%">
                 </td>
-                <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
+                <td width="3%"></td>
+                <td width="39%" style="text-align: center">
+                    @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
+                    <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
+                    <label for="">(&nbsp; นางผ่องสี &nbsp; เพื่อนสงคราม&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
+                    <label for="">(&nbsp; นางสาวฝอยทอง  &nbsp; นามวิจิตร&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
+                    <label for="">(&nbsp; นางสาวฝอยทอง &nbsp; นามวิจิตร&nbsp;)</label>
+                    @else
+                        
+                    @endif
+                    
                 </td>
                 <td width="7%"></td>
             </tr>
@@ -402,10 +413,17 @@
                 <td width="48%" style="text-align: center"> 
                         หัวหน้ากลุ่มงาน ...............................................
                 </td> 
-                <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
+                <td width="13%"></td>
+                <td width="27%">
+                    @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
+                    <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
+                    <label for="">(&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
+                    <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
+                    <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
+                    @else                    
                 </td>
                 <td width="10%">
                 </td>
@@ -1500,11 +1518,21 @@
             </td>
             <td width="10%">
             </td>
-            <td width="1%"></td>
-            <td width="42%" style="text-align: center">
-                <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
-            </td>
+            <td width="3%"></td>
+                <td width="39%" style="text-align: center">
+                    @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
+                    <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
+                    <label for="">(&nbsp; นางผ่องสี &nbsp; เพื่อนสงคราม&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
+                    <label for="">(&nbsp; นางสาวฝอยทอง  &nbsp; นามวิจิตร&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
+                    <label for="">(&nbsp; นางสาวฝอยทอง &nbsp; นามวิจิตร&nbsp;)</label>
+                    @else
+                        
+                    @endif
+                    
+                </td>
             <td width="7%"></td>
         </tr>
     </table>
@@ -1514,11 +1542,18 @@
             <td width="48%" style="text-align: center"> 
                     หัวหน้ากลุ่มงาน ...............................................
             </td> 
-            <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
-                </td>
+            <td width="13%"></td>
+            <td width="27%">
+                @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
+                <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
+                <label for="">(&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
+                <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
+                <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
+                @else                    
+            </td>
                 <td width="10%">
                 </td>
         </tr>
@@ -2595,10 +2630,20 @@
                 </td>
                 <td width="10%">
                 </td>
-                <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
+                <td width="3%"></td>
+                <td width="39%" style="text-align: center">
+                    @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
+                    <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
+                    <label for="">(&nbsp; นางผ่องสี &nbsp; เพื่อนสงคราม&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
+                    <label for="">(&nbsp; นางสาวฝอยทอง  &nbsp; นามวิจิตร&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
+                    <label for="">(&nbsp; นางสาวฝอยทอง &nbsp; นามวิจิตร&nbsp;)</label>
+                    @else
+                        
+                    @endif
+                    
                 </td>
                 <td width="7%"></td>
             </tr>
@@ -2609,10 +2654,17 @@
                 <td width="48%" style="text-align: center"> 
                         หัวหน้ากลุ่มงาน ...............................................
                 </td> 
-                <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
+                <td width="13%"></td>
+                <td width="27%">
+                    @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
+                    <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
+                    <label for="">(&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
+                    <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
+                    @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
+                    <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
+                    @else                    
                 </td>
                 <td width="10%">
                 </td>
@@ -3693,11 +3745,21 @@
             </td>
             <td width="10%">
             </td>
-            <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
-                </td>
+            <td width="3%"></td>
+            <td width="39%" style="text-align: center">
+                @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
+                <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
+                <label for="">(&nbsp; นางผ่องสี &nbsp; เพื่อนสงคราม&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
+                <label for="">(&nbsp; นางสาวฝอยทอง  &nbsp; นามวิจิตร&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
+                <label for="">(&nbsp; นางสาวฝอยทอง &nbsp; นามวิจิตร&nbsp;)</label>
+                @else
+                    
+                @endif
+                
+            </td>
                 <td width="7%"></td>
         </tr>
     </table>
@@ -3707,11 +3769,18 @@
             <td width="48%" style="text-align: center"> 
                     หัวหน้ากลุ่มงาน ...............................................
             </td> 
-            <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
-                </td>
+            <td width="13%"></td>
+            <td width="27%">
+                @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
+                <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
+                <label for="">(&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
+                <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
+                @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
+                <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
+                @else                    
+            </td>
                 <td width="10%">
                 </td>
         </tr>
