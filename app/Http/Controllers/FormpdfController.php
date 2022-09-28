@@ -1721,8 +1721,8 @@ public function billpaypdf_10978(Request $request,$id,$iduser)
       ->where('WAREHOUSE_ID','=', $id)
       ->first();
 
-    $invencount = DB::table('supplies_inven_permiss')->where('INVENPERMIS_INVEN_ID','=', $inforwarehouserequest->WAREHOUSE_INVEN_ID)->first();
-    dd( $invencount);
+    // $invencount = DB::table('supplies_inven_permiss')->where('INVENPERMIS_INVEN_ID','=', $inforwarehouserequest->WAREHOUSE_INVEN_ID)->first();
+    // dd( $invencount);
     // $invencount = Warehouserequest::where('WAREHOUSE_ID','=', $id)->count();
 
       $warehouserequest = DB::table('warehouse_request_sub')

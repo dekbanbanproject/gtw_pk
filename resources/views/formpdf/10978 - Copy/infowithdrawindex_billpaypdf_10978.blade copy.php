@@ -166,10 +166,14 @@
     <table width="100%">
         <tr>
             <td width="60%">
-                <b>เรียน</b> &nbsp; 
+                <b>เรียน</b> &nbsp;
+                {{-- @foreach ($info_orgs as $info_org)
+                    {{ $info_org->ORG_LEADER_POSITION }}
+                @endforeach --}}
                 หัวหน้าหน่วยพัสดุ
             </td>
-            <td width="40%"> 
+            <td width="40%">
+                {{-- <b>วันที่</b> &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} --}}
             </td>
         </tr>
     </table>
@@ -177,15 +181,21 @@
         <tr>
             <td width="10%">
             </td>
-            <td width="90%"> 
-                ข้าพเจ้าขอเบิกพัสดุตามรายการข้างล่างนี้ เพื่อใช้ในราชการ โรงพยาบาลภูเขียวเฉลิมพระเกียรติ
-            </td> 
+            <td width="90%">
+                {{-- ด้วย &nbsp;{{ $inforwarehouserequests->HR_DEPARTMENT_SUB_SUB_NAME }} --}}
+                ข้าพเจ้าขอเบิกพัสดุตามรายการข้างล่างนี้ เพื่อใช้ในราชการ................................................................ 
+            </td>
+            {{-- <td width="50%"> --}}
+                {{-- มีความประสงค์ขอเบิกวัสดุ &nbsp;{{ $inforwarehouserequests->WAREHOUSE_REQUEST_BUY_COMMENT }} --}}
+            {{-- </td> --}}
         </tr>
     </table>
     <table width="100%">
         <tr>
             <td width="100%">
-                และมอบให้...........................................ตำแหน่ง ....................................................เป็นผู้รับ ตามใบเบิกนี้ 
+                และมอบให้...........................................ตำแหน่ง ....................................................เป็นผู้รับ ตามใบเบิกนี้
+                {{-- ผู้ป่วยที่เข้ามารับบริการของโรงพยาบาล ประจำเดือน &nbsp;
+                {{ DateThaimount($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;&nbsp; ตามรายการดังนี้ --}}
             </td>
         </tr>
     </table>
@@ -371,61 +381,57 @@
                 </td>
             </tr>
         </table>
-      <?php 
-        $invencount = DB::table('supplies_inven_permiss')
-        ->leftjoin('hrd_person','hrd_person.ID','=','supplies_inven_permiss.INVENPERMIS_PERSON_ID')
-        ->leftjoin('warehouse_store_export_sub','warehouse_store_export_sub.EXPORT_SUB_USER_ID','=','hrd_person.ID')
-        ->where('INVENPERMIS_INVEN_ID','=', $inforwarehouserequests->WAREHOUSE_INVEN_ID)->first();
-        // warehouse_store_export_sub
-        $pername = $invencount->HR_FNAME.'  '.$invencount->HR_LNAME;
-        $perposition = $invencount->POSITION_IN_WORK;
-      ?>
+      
         <table width="100%" style="margin-top: 5px">
             <tr>
                 <td width="8%"></td>
-                <td width="32%" style="text-align: center"> 
+                <td width="32%" style="text-align: center">
+                    {{-- <label for="">(&nbsp; {{ $inforwarehouserequests->WAREHOUSE_SAVE_HR_NAME }} &nbsp;)</label> --}}
                     <label for="">(.............................................................)</label>
                 </td>
                 <td width="10%">
                 </td>
-                <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
+                <td width="9%"></td>
+                <td width="31%" style="text-align: center">
+                    <label for="">(&nbsp; นางสาวรัชดาพร  &nbsp;  ภิรมย์ไกรภักดิ์&nbsp;)</label>
                 </td>
-                <td width="7%"></td>
+                <td width="10%">
+                </td>
             </tr>
         </table>
         <table width="100%" style="margin-top: 2px">
             <tr>
                 <td width="2%"></td>
-                <td width="48%" style="text-align: center"> 
+                <td width="48%" style="text-align: center">
+                    {{-- <label for="">(&nbsp; {{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }}
+                        &nbsp;)</label> --}}
                         หัวหน้ากลุ่มงาน ...............................................
-                </td> 
+                </td>
+                {{-- <td width="10%">
+                </td> --}}
                 <td width="12%"></td>
                 <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
+                    เจ้าพนักงานธุรการชำนาญงาน
                 </td>
                 <td width="10%">
                 </td>
             </tr>
         </table>
-        <table width="100%" style="margin-top: 20px">
+        <table width="100%" style="margin-top: 2px">
             <tr>
-                <td width="14%"></td>
-                <td width="36%">                    
+                <td width="7%"></td>
+                <td width="43%">                    
                        ได้รับพัสดุถูกต้องครบถ้วน
                 </td>
-                <td width="15%"></td>
-                <td width="25%">
+                <td width="10%"></td>
+                <td width="30%">
                     ได้จ่ายและลงบัญชีแล้ว
                 </td>
                 <td width="10%">
                 </td>
             </tr>
         </table>
-        <table width="100%" style="margin-top: 15px">
+        <table width="100%" style="margin-top: 40px">
             <tr>
                 <td width="5%"></td>
                 <td width="35%">
@@ -451,8 +457,8 @@
                 </td>
                 <td width="10%">
                 </td>
-                <td width="8%"></td>
-                <td width="32%" style="text-align: center">
+                <td width="9%"></td>
+                <td width="31%" style="text-align: center">
                     <label for="">(&nbsp;.............................................................&nbsp;)</label>
                 </td>
                 <td width="10%">
@@ -490,7 +496,7 @@
 
 
     <center><B style="font-size: 18px;">ใบเบิกวัสดุ</B></center><BR>
-        {{-- <table width="100%">
+        <table width="100%">
             <tr>
                 <td width="60%">
                     <b>ชื่อหน่วยงาน</b> &nbsp;{{ $inforwarehouserequests->HR_DEPARTMENT_SUB_SUB_NAME }}
@@ -530,53 +536,6 @@
                 <td width="100%">
                     ผู้ป่วยที่เข้ามารับบริการของโรงพยาบาล ประจำเดือน &nbsp;
                     {{ DateThaimount($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;&nbsp; ตามรายการดังนี้
-                </td>
-            </tr>
-        </table> --}}
-        <table width="100%">
-            <tr>
-                <td width="70%">
-                    <b>ชื่อหน่วยงาน</b> &nbsp;{{ $inforwarehouserequests->HR_DEPARTMENT_SUB_SUB_NAME }}
-                </td>
-                <td width="30%">
-                    <b>ใบเบิกเลขที่</b> &nbsp;{{ $inforwarehouserequests->WAREHOUSE_REQUEST_CODE }}
-                </td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td width="70%">
-                    <b>เรื่อง</b> &nbsp;
-                     ขออนุมัติเบิก
-                </td>
-                <td width="30%">
-                    <b>วันที่</b> &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }}
-                </td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td width="60%">
-                    <b>เรียน</b> &nbsp; 
-                    หัวหน้าหน่วยพัสดุ
-                </td>
-                <td width="40%"> 
-                </td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td width="10%">
-                </td>
-                <td width="90%"> 
-                    ข้าพเจ้าขอเบิกพัสดุตามรายการข้างล่างนี้ เพื่อใช้ในราชการ โรงพยาบาลภูเขียวเฉลิมพระเกียรติ
-                </td> 
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td width="100%">
-                    และมอบให้...........................................ตำแหน่ง ....................................................เป็นผู้รับ ตามใบเบิกนี้ 
                 </td>
             </tr>
         </table>
@@ -1388,8 +1347,7 @@
     @endif
 
     @if($count > 20 ) 
-
-    {{-- <table width="100%" style="margin-top: 50px">
+    <table width="100%" style="margin-top: 50px">
         <tr>
             <td width="5%"></td>
             <td width="35%">
@@ -1406,7 +1364,8 @@
                 ผู้จ่ายพัสดุ
             </td>
         </tr>
-    </table>  
+    </table>
+  
     <table width="100%" style="margin-top: 5px">
         <tr>
             <td width="8%"></td>
@@ -1472,120 +1431,6 @@
             <td width="10%">
             </td>
         </tr>
-    </table>     --}}
-    <table width="100%" style="margin-top: 50px">
-        <tr>
-            <td width="5%"></td>
-            <td width="35%">
-                ลงชื่อ.............................................................
-            </td>
-            <td width="10%">
-                ผู้เบิก
-            </td>
-            <td width="5%"></td>
-            <td width="35%">
-                ลงชื่อ.............................................................
-            </td>
-            <td width="10%">
-                ผู้สั่งจ่าย
-            </td>
-        </tr>
-    </table>
-  
-    <table width="100%" style="margin-top: 5px">
-        <tr>
-            <td width="8%"></td>
-            <td width="32%" style="text-align: center"> 
-                <label for="">(.............................................................)</label>
-            </td>
-            <td width="10%">
-            </td>
-            <td width="1%"></td>
-            <td width="42%" style="text-align: center">
-                <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
-            </td>
-            <td width="7%"></td>
-        </tr>
-    </table>
-    <table width="100%" style="margin-top: 2px">
-        <tr>
-            <td width="2%"></td>
-            <td width="48%" style="text-align: center"> 
-                    หัวหน้ากลุ่มงาน ...............................................
-            </td> 
-            <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
-                </td>
-                <td width="10%">
-                </td>
-        </tr>
-    </table>
-    <table width="100%" style="margin-top: 20px">
-        <tr>
-            <td width="14%"></td>
-            <td width="36%">                    
-                   ได้รับพัสดุถูกต้องครบถ้วน
-            </td>
-            <td width="15%"></td>
-            <td width="25%">
-                ได้จ่ายและลงบัญชีแล้ว
-            </td>
-            <td width="10%">
-            </td>
-        </tr>
-    </table>
-    <table width="100%" style="margin-top: 15px">
-        <tr>
-            <td width="5%"></td>
-            <td width="35%">
-                ลงชื่อ.............................................................
-            </td>
-            <td width="10%">
-                ผู้รับ
-            </td>
-            <td width="5%"></td>
-            <td width="35%">
-                ลงชื่อ.............................................................
-            </td>
-            <td width="10%">
-                ผู้จ่าย
-            </td>
-        </tr>
-    </table>
-    <table width="100%" style="margin-top: 5px">
-        <tr>
-            <td width="8%"></td>
-            <td width="32%" style="text-align: center">
-                <label for="">(&nbsp;.............................................................&nbsp;)</label>
-            </td>
-            <td width="10%">
-            </td>
-            <td width="8%"></td>
-            <td width="32%" style="text-align: center">
-                <label for="">(&nbsp;.............................................................&nbsp;)</label>
-            </td>
-            <td width="10%">
-            </td>
-        </tr>
-    </table>    
-    <table width="100%" style="margin-top: 5px">
-        <tr>
-            <td width="8%"></td>
-            <td width="32%" style="text-align: center">
-                <label for="">(&nbsp; วันที่ &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;)</label>
-            </td>
-            <td width="10%">
-            </td>
-            <td width="9%"></td>
-            <td width="31%" style="text-align: center">
-                <label for="">(&nbsp; วันที่ &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;)</label>
-            </td>
-            <td width="10%">
-            </td>
-        </tr>
     </table>    
 
     @endif
@@ -1596,7 +1441,7 @@
         <p style="page-break-after: always;"></p> 
 
             <center><B style="font-size: 18px;">ใบเบิกวัสดุ</B></center><BR>
-                {{-- <table width="100%">
+                <table width="100%">
                     <tr>
                         <td width="60%">
                             <b>ชื่อหน่วยงาน</b> &nbsp;{{ $inforwarehouserequests->HR_DEPARTMENT_SUB_SUB_NAME }}
@@ -1638,55 +1483,7 @@
                             {{ DateThaimount($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;&nbsp; ตามรายการดังนี้
                         </td>
                     </tr>
-                </table> --}}
-                <table width="100%">
-                    <tr>
-                        <td width="70%">
-                            <b>ชื่อหน่วยงาน</b> &nbsp;{{ $inforwarehouserequests->HR_DEPARTMENT_SUB_SUB_NAME }}
-                        </td>
-                        <td width="30%">
-                            <b>ใบเบิกเลขที่</b> &nbsp;{{ $inforwarehouserequests->WAREHOUSE_REQUEST_CODE }}
-                        </td>
-                    </tr>
                 </table>
-                <table width="100%">
-                    <tr>
-                        <td width="70%">
-                            <b>เรื่อง</b> &nbsp;
-                             ขออนุมัติเบิก
-                        </td>
-                        <td width="30%">
-                            <b>วันที่</b> &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }}
-                        </td>
-                    </tr>
-                </table>
-                <table width="100%">
-                    <tr>
-                        <td width="60%">
-                            <b>เรียน</b> &nbsp; 
-                            หัวหน้าหน่วยพัสดุ
-                        </td>
-                        <td width="40%"> 
-                        </td>
-                    </tr>
-                </table>
-                <table width="100%">
-                    <tr>
-                        <td width="10%">
-                        </td>
-                        <td width="90%"> 
-                            ข้าพเจ้าขอเบิกพัสดุตามรายการข้างล่างนี้ เพื่อใช้ในราชการ โรงพยาบาลภูเขียวเฉลิมพระเกียรติ
-                        </td> 
-                    </tr>
-                </table>
-                <table width="100%">
-                    <tr>
-                        <td width="100%">
-                            และมอบให้...........................................ตำแหน่ง ....................................................เป็นผู้รับ ตามใบเบิกนี้ 
-                        </td>
-                    </tr>
-                </table>
-
             <main>
                 <table width="100%" class="one" style="margin-top: 7px;">
                     <thead>
@@ -2484,7 +2281,7 @@
       
         @if($count > 41)
 
-        {{-- <table width="100%" style="margin-top: 50px">
+        <table width="100%" style="margin-top: 50px">
             <tr>
                 <td width="5%"></td>
                 <td width="35%">
@@ -2567,121 +2364,7 @@
                 <td width="10%">
                 </td>
             </tr>
-        </table>  --}}
-        <table width="100%" style="margin-top: 50px">
-            <tr>
-                <td width="5%"></td>
-                <td width="35%">
-                    ลงชื่อ.............................................................
-                </td>
-                <td width="10%">
-                    ผู้เบิก
-                </td>
-                <td width="5%"></td>
-                <td width="35%">
-                    ลงชื่อ.............................................................
-                </td>
-                <td width="10%">
-                    ผู้สั่งจ่าย
-                </td>
-            </tr>
-        </table>
-      
-        <table width="100%" style="margin-top: 5px">
-            <tr>
-                <td width="8%"></td>
-                <td width="32%" style="text-align: center"> 
-                    <label for="">(.............................................................)</label>
-                </td>
-                <td width="10%">
-                </td>
-                <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
-                </td>
-                <td width="7%"></td>
-            </tr>
-        </table>
-        <table width="100%" style="margin-top: 2px">
-            <tr>
-                <td width="2%"></td>
-                <td width="48%" style="text-align: center"> 
-                        หัวหน้ากลุ่มงาน ...............................................
-                </td> 
-                <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
-                </td>
-                <td width="10%">
-                </td>
-            </tr>
-        </table>
-        <table width="100%" style="margin-top: 20px">
-            <tr>
-                <td width="14%"></td>
-                <td width="36%">                    
-                       ได้รับพัสดุถูกต้องครบถ้วน
-                </td>
-                <td width="15%"></td>
-                <td width="25%">
-                    ได้จ่ายและลงบัญชีแล้ว
-                </td>
-                <td width="10%">
-                </td>
-            </tr>
-        </table>
-        <table width="100%" style="margin-top: 15px">
-            <tr>
-                <td width="5%"></td>
-                <td width="35%">
-                    ลงชื่อ.............................................................
-                </td>
-                <td width="10%">
-                    ผู้รับ
-                </td>
-                <td width="5%"></td>
-                <td width="35%">
-                    ลงชื่อ.............................................................
-                </td>
-                <td width="10%">
-                    ผู้จ่าย
-                </td>
-            </tr>
-        </table>
-        <table width="100%" style="margin-top: 5px">
-            <tr>
-                <td width="8%"></td>
-                <td width="32%" style="text-align: center">
-                    <label for="">(&nbsp;.............................................................&nbsp;)</label>
-                </td>
-                <td width="10%">
-                </td>
-                <td width="8%"></td>
-                <td width="32%" style="text-align: center">
-                    <label for="">(&nbsp;.............................................................&nbsp;)</label>
-                </td>
-                <td width="10%">
-                </td>
-            </tr>
-        </table>    
-        <table width="100%" style="margin-top: 5px">
-            <tr>
-                <td width="8%"></td>
-                <td width="32%" style="text-align: center">
-                    <label for="">(&nbsp; วันที่ &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;)</label>
-                </td>
-                <td width="10%">
-                </td>
-                <td width="9%"></td>
-                <td width="31%" style="text-align: center">
-                    <label for="">(&nbsp; วันที่ &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;)</label>
-                </td>
-                <td width="10%">
-                </td>
-            </tr>
-        </table>    
+        </table>     
 
         @endif
 
@@ -2692,7 +2375,7 @@
     <p style="page-break-after: always;"></p> 
 
         <center><B style="font-size: 18px;">ใบเบิกวัสดุ</B></center><BR>
-            {{-- <table width="100%">
+            <table width="100%">
                 <tr>
                     <td width="60%">
                         <b>ชื่อหน่วยงาน</b> &nbsp;{{ $inforwarehouserequests->HR_DEPARTMENT_SUB_SUB_NAME }}
@@ -2734,56 +2417,7 @@
                         {{ DateThaimount($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;&nbsp; ตามรายการดังนี้
                     </td>
                 </tr>
-            </table> --}}
-            
-            <table width="100%">
-                <tr>
-                    <td width="70%">
-                        <b>ชื่อหน่วยงาน</b> &nbsp;{{ $inforwarehouserequests->HR_DEPARTMENT_SUB_SUB_NAME }}
-                    </td>
-                    <td width="30%">
-                        <b>ใบเบิกเลขที่</b> &nbsp;{{ $inforwarehouserequests->WAREHOUSE_REQUEST_CODE }}
-                    </td>
-                </tr>
             </table>
-            <table width="100%">
-                <tr>
-                    <td width="70%">
-                        <b>เรื่อง</b> &nbsp;
-                         ขออนุมัติเบิก
-                    </td>
-                    <td width="30%">
-                        <b>วันที่</b> &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }}
-                    </td>
-                </tr>
-            </table>
-            <table width="100%">
-                <tr>
-                    <td width="60%">
-                        <b>เรียน</b> &nbsp; 
-                        หัวหน้าหน่วยพัสดุ
-                    </td>
-                    <td width="40%"> 
-                    </td>
-                </tr>
-            </table>
-            <table width="100%">
-                <tr>
-                    <td width="10%">
-                    </td>
-                    <td width="90%"> 
-                        ข้าพเจ้าขอเบิกพัสดุตามรายการข้างล่างนี้ เพื่อใช้ในราชการ โรงพยาบาลภูเขียวเฉลิมพระเกียรติ
-                    </td> 
-                </tr>
-            </table>
-            <table width="100%">
-                <tr>
-                    <td width="100%">
-                        และมอบให้...........................................ตำแหน่ง ....................................................เป็นผู้รับ ตามใบเบิกนี้ 
-                    </td>
-                </tr>
-            </table>
-
         <main>
             <table width="100%" class="one" style="margin-top: 7px;">
                 <thead>
@@ -3582,7 +3216,7 @@
 
     @if($count > 60)
 
-    {{-- <table width="100%" style="margin-top: 50px">
+    <table width="100%" style="margin-top: 50px">
         <tr>
             <td width="5%"></td>
             <td width="35%">
@@ -3665,121 +3299,7 @@
             <td width="10%">
             </td>
         </tr>
-    </table>  --}}
-    <table width="100%" style="margin-top: 50px">
-        <tr>
-            <td width="5%"></td>
-            <td width="35%">
-                ลงชื่อ.............................................................
-            </td>
-            <td width="10%">
-                ผู้เบิก
-            </td>
-            <td width="5%"></td>
-            <td width="35%">
-                ลงชื่อ.............................................................
-            </td>
-            <td width="10%">
-                ผู้สั่งจ่าย
-            </td>
-        </tr>
-    </table>
-  
-    <table width="100%" style="margin-top: 5px">
-        <tr>
-            <td width="8%"></td>
-            <td width="32%" style="text-align: center"> 
-                <label for="">(.............................................................)</label>
-            </td>
-            <td width="10%">
-            </td>
-            <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
-                </td>
-                <td width="7%"></td>
-        </tr>
-    </table>
-    <table width="100%" style="margin-top: 2px">
-        <tr>
-            <td width="2%"></td>
-            <td width="48%" style="text-align: center"> 
-                    หัวหน้ากลุ่มงาน ...............................................
-            </td> 
-            <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
-                </td>
-                <td width="10%">
-                </td>
-        </tr>
-    </table>
-    <table width="100%" style="margin-top: 20px">
-        <tr>
-            <td width="14%"></td>
-            <td width="36%">                    
-                   ได้รับพัสดุถูกต้องครบถ้วน
-            </td>
-            <td width="15%"></td>
-            <td width="25%">
-                ได้จ่ายและลงบัญชีแล้ว
-            </td>
-            <td width="10%">
-            </td>
-        </tr>
-    </table>
-    <table width="100%" style="margin-top: 15px">
-        <tr>
-            <td width="5%"></td>
-            <td width="35%">
-                ลงชื่อ.............................................................
-            </td>
-            <td width="10%">
-                ผู้รับ
-            </td>
-            <td width="5%"></td>
-            <td width="35%">
-                ลงชื่อ.............................................................
-            </td>
-            <td width="10%">
-                ผู้จ่าย
-            </td>
-        </tr>
-    </table>
-    <table width="100%" style="margin-top: 5px">
-        <tr>
-            <td width="8%"></td>
-            <td width="32%" style="text-align: center">
-                <label for="">(&nbsp;.............................................................&nbsp;)</label>
-            </td>
-            <td width="10%">
-            </td>
-            <td width="8%"></td>
-            <td width="32%" style="text-align: center">
-                <label for="">(&nbsp;.............................................................&nbsp;)</label>
-            </td>
-            <td width="10%">
-            </td>
-        </tr>
-    </table>    
-    <table width="100%" style="margin-top: 5px">
-        <tr>
-            <td width="8%"></td>
-            <td width="32%" style="text-align: center">
-                <label for="">(&nbsp; วันที่ &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;)</label>
-            </td>
-            <td width="10%">
-            </td>
-            <td width="9%"></td>
-            <td width="31%" style="text-align: center">
-                <label for="">(&nbsp; วันที่ &nbsp;{{ DateThai($inforwarehouserequests->WAREHOUSE_DATE_WANT) }} &nbsp;)</label>
-            </td>
-            <td width="10%">
-            </td>
-        </tr>
-    </table>    
+    </table>     
 
     @endif
    

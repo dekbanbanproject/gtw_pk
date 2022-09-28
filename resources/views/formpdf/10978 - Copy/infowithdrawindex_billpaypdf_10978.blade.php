@@ -374,11 +374,9 @@
       <?php 
         $invencount = DB::table('supplies_inven_permiss')
         ->leftjoin('hrd_person','hrd_person.ID','=','supplies_inven_permiss.INVENPERMIS_PERSON_ID')
-        ->leftjoin('warehouse_store_export_sub','warehouse_store_export_sub.EXPORT_SUB_USER_ID','=','hrd_person.ID')
         ->where('INVENPERMIS_INVEN_ID','=', $inforwarehouserequests->WAREHOUSE_INVEN_ID)->first();
-        // warehouse_store_export_sub
-        $pername = $invencount->HR_FNAME.'  '.$invencount->HR_LNAME;
-        $perposition = $invencount->POSITION_IN_WORK;
+            
+        $pername = $invencount->HR_FNAME.'  '.$invencount->HR_LNAME
       ?>
         <table width="100%" style="margin-top: 5px">
             <tr>
@@ -388,12 +386,12 @@
                 </td>
                 <td width="10%">
                 </td>
-                <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
-                </td>
                 <td width="7%"></td>
+            <td width="36%" style="text-align: center">
+                <label for="">(&nbsp; {{$pername}}&nbsp;)</label>
+                {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
+            </td>
+            <td width="7%"></td>
             </tr>
         </table>
         <table width="100%" style="margin-top: 2px">
@@ -404,8 +402,7 @@
                 </td> 
                 <td width="12%"></td>
                 <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
+                    นักวิชาการเงินและบัญชี
                 </td>
                 <td width="10%">
                 </td>
@@ -1500,10 +1497,9 @@
             </td>
             <td width="10%">
             </td>
-            <td width="1%"></td>
-            <td width="42%" style="text-align: center">
-                <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
+            <td width="7%"></td>
+            <td width="36%" style="text-align: center">
+                <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
             </td>
             <td width="7%"></td>
         </tr>
@@ -1515,12 +1511,11 @@
                     หัวหน้ากลุ่มงาน ...............................................
             </td> 
             <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
-                </td>
-                <td width="10%">
-                </td>
+            <td width="28%">
+                นักวิชาการเงินและบัญชี
+            </td>
+            <td width="10%">
+            </td>
         </tr>
     </table>
     <table width="100%" style="margin-top: 20px">
@@ -2595,10 +2590,9 @@
                 </td>
                 <td width="10%">
                 </td>
-                <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
+                <td width="7%"></td>
+                <td width="36%" style="text-align: center">
+                    <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
                 </td>
                 <td width="7%"></td>
             </tr>
@@ -2611,8 +2605,7 @@
                 </td> 
                 <td width="12%"></td>
                 <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
+                    นักวิชาการเงินและบัญชี
                 </td>
                 <td width="10%">
                 </td>
@@ -3693,12 +3686,11 @@
             </td>
             <td width="10%">
             </td>
-            <td width="1%"></td>
-                <td width="42%" style="text-align: center">
-                    <label for="">(&nbsp;&nbsp; {{$pername}} &nbsp;&nbsp;)</label>
-                    {{-- <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label> --}}
-                </td>
-                <td width="7%"></td>
+            <td width="7%"></td>
+            <td width="36%" style="text-align: center">
+                <label for="">(&nbsp; นางสาวรัชดาพร &nbsp; ภิรมย์ไกรภักดิ์&nbsp;)</label>
+            </td>
+            <td width="7%"></td>
         </tr>
     </table>
     <table width="100%" style="margin-top: 2px">
@@ -3708,12 +3700,11 @@
                     หัวหน้ากลุ่มงาน ...............................................
             </td> 
             <td width="12%"></td>
-                <td width="28%">
-                    <label for="">(&nbsp;&nbsp;  {{$perposition}} &nbsp;&nbsp;)</label>
-                    {{-- นักวิชาการเงินและบัญชี --}}
-                </td>
-                <td width="10%">
-                </td>
+            <td width="28%">
+                นักวิชาการเงินและบัญชี
+            </td>
+            <td width="10%">
+            </td>
         </tr>
     </table>
     <table width="100%" style="margin-top: 20px">
