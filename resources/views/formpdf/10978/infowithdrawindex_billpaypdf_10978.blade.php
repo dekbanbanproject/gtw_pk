@@ -413,8 +413,8 @@
                 <td width="48%" style="text-align: center"> 
                         หัวหน้ากลุ่มงาน ...............................................
                 </td> 
-                <td width="11%"></td>
-                <td width="29%">
+                <td width="9%"></td>
+                <td width="31%">
                     @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
                     <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
@@ -1543,8 +1543,8 @@
             <td width="48%" style="text-align: center"> 
                     หัวหน้ากลุ่มงาน ...............................................
             </td> 
-            <td width="11%"></td>
-            <td width="29%">
+            <td width="9%"></td>
+            <td width="31%">
                 @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
                 <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
@@ -2656,8 +2656,8 @@
                 <td width="48%" style="text-align: center"> 
                         หัวหน้ากลุ่มงาน ...............................................
                 </td> 
-                <td width="11%"></td>
-                <td width="29%">
+                <td width="9%"></td>
+                <td width="31%">
                     @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
                     <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
@@ -3772,8 +3772,8 @@
             <td width="48%" style="text-align: center"> 
                     หัวหน้ากลุ่มงาน ...............................................
             </td> 
-            <td width="11%"></td>
-            <td width="29%">
+            <td width="9%"></td>
+            <td width="31%">
                 @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
                 <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
