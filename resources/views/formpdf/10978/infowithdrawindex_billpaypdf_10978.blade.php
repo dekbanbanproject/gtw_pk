@@ -416,13 +416,13 @@
                 <td width="9%"></td>
                 <td width="31%">
                     @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
-                    <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
+                    <label for="">&nbsp; นักวิชาการเงินและบัญชี&nbsp;</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
-                    <label for="">(&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;)</label>
+                    <label for="">&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
-                    <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
+                    <label for="">&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
-                    <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
+                    <label for="">&nbsp; เจ้าพนักงานธุรการ&nbsp;</label>
                     @else  
                     @endif                  
                 </td>
@@ -1546,13 +1546,13 @@
             <td width="9%"></td>
             <td width="31%">
                 @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
-                <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
+                <label for="">&nbsp; นักวิชาการเงินและบัญชี&nbsp;</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
-                <label for="">(&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;)</label>
+                <label for="">&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
-                <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
+                <label for="">&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
-                <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
+                <label for="">&nbsp; เจ้าพนักงานธุรการ&nbsp;</label>
                 @else  
                 @endif                  
             </td>
@@ -2659,13 +2659,13 @@
                 <td width="9%"></td>
                 <td width="31%">
                     @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
-                    <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
+                    <label for="">&nbsp; นักวิชาการเงินและบัญชี&nbsp;</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
-                    <label for="">(&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;)</label>
+                    <label for="">&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
-                    <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
+                    <label for="">&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;</label>
                     @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
-                    <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
+                    <label for="">&nbsp; เจ้าพนักงานธุรการ&nbsp;</label>
                     @else  
                     @endif                  
                 </td>
@@ -3775,13 +3775,13 @@
             <td width="9%"></td>
             <td width="31%">
                 @if ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '1')
-                <label for="">(&nbsp; นักวิชาการเงินและบัญชี&nbsp;)</label>
+                <label for="">&nbsp; นักวิชาการเงินและบัญชี&nbsp;</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '6')
-                <label for="">(&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;)</label>
+                <label for="">&nbsp; นักเทคนิคการแพทย์ชำนาญการ&nbsp;</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '14')
-                <label for="">(&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;)</label>
+                <label for="">&nbsp; เจ้าพนักงานธุรการชำนาญงาน&nbsp;</label>
                 @elseif ($inforwarehouserequests->WAREHOUSE_INVEN_ID == '11')
-                <label for="">(&nbsp; เจ้าพนักงานธุรการ&nbsp;)</label>
+                <label for="">&nbsp; เจ้าพนักงานธุรการ&nbsp;</label>
                 @else  
                 @endif                  
             </td>
