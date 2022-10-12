@@ -177,6 +177,7 @@ class ManagerrepairnomalController extends Controller
                     $q->orwhere('REPAIR_NAME','like','%'.$search.'%');
                     $q->orwhere('SYMPTOM','like','%'.$search.'%');
                     $q->orwhere('USRE_REQUEST_NAME','like','%'.$search.'%');
+                    $q->orwhere('TECH_REPAIR_NAME','like','%'.$search.'%');
                     })
                     ->WhereBetween('DATE_TIME_REQUEST',[$from.' 00:00:00',$to.' 23:59:00']) 
                 ->orderBy('REPAIR_ID', 'desc')->get(); 
@@ -192,6 +193,7 @@ class ManagerrepairnomalController extends Controller
                     $q->orwhere('REPAIR_NAME','like','%'.$search.'%');
                     $q->orwhere('SYMPTOM','like','%'.$search.'%');
                     $q->orwhere('USRE_REQUEST_NAME','like','%'.$search.'%');
+                    $q->orwhere('TECH_REPAIR_NAME','like','%'.$search.'%');
                     })
                     ->WhereBetween('DATE_TIME_REQUEST',[$from.' 00:00:00',$to.' 23:59:00']) 
                 ->orderBy('REPAIR_ID', 'desc')->get(); 

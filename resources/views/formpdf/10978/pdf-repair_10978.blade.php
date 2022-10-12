@@ -69,7 +69,7 @@
         <span>หน่วยงานผู้แจ้งซ่อม : </span>
         <span style="margin-left:50px;"><b>{{$informrepair_index->HR_DEPARTMENT_SUB_SUB_NAME}}</b></span>
         <span style="margin-left:50px;">เบอร์โทร : </span>
-        <span><b>....................................................</b></span>
+        <span><b>{{$informrepair_index->PHONE_IN}}</b></span>
     </div>
     <div class="col-md-12">
         <div class="row">
